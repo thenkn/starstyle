@@ -32,7 +32,7 @@ def style_with_stars(text):
         str: Text styled with stars
     """
     lines = text.split('\n')
-    max_length = max(len(line) for line in lines) if lines else 0
+    max_length = max((len(line) for line in lines), default=0)
     border = '*' * (max_length + 4)
     
     styled_lines = [border]
